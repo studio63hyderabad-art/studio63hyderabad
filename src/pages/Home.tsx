@@ -193,7 +193,7 @@ export default function Home() {
               to="/portfolio"
               className="inline-flex items-center gap-2 font-sans text-[12px] tracking-widest uppercase text-[var(--color-brown)] hover:text-[var(--color-gold)] transition-colors"
             >
-              View full portfolio →
+              View full portfoliosss →
             </Link>
           </div>
         </div>
