@@ -28,6 +28,7 @@ export default function Models() {
             alt="Fashion & model photography by Studio63"
             label="Models hero editorial portrait"
             aspect="aspect-auto"
+            objectPosition="center 25%"
             className="w-full h-full"
           />
         </div>
@@ -118,6 +119,7 @@ export default function Models() {
                   src={img.src}
                   alt={img.description ?? img.title}
                   aspect="aspect-[2/3]"
+                  objectPosition="center top"
                   className="!h-auto object-top"
                 />
                 {selectedImageId === img.id && (

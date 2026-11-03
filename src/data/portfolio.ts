@@ -76,12 +76,12 @@ export const portfolioImages: PortfolioImage[] = [
   { id: "mo8", category: "Models", title: "The Statement Suit", src: "/images/portfolio/Models/DSC_4803.webp", orientation: "portrait", description: "A tailored black suit, statement jewellery and pink platform heels create a bold fashion look." },
   { id: "mo9", category: "Models", title: "Editorial Edge", src: "/images/portfolio/Models/DSC_4810.webp", orientation: "portrait", description: "A poised profile pairs sharp black tailoring with sculptural silver jewellery." },
 
-  { id: "mo15", category: "Models", title: "Fashion Portrait 01", src: "/images/portfolio/Models_2/DSC03776.webp", orientation: "landscape" },
-  { id: "mo16", category: "Models", title: "Fashion Portrait 02", src: "/images/portfolio/Models_2/DSC05230.webp", orientation: "landscape" },
-  { id: "mo17", category: "Models", title: "Fashion Portrait 03", src: "/images/portfolio/Models_2/DSC_0078.webp", orientation: "landscape" },
+  { id: "mo15", category: "Models", title: "Fashion Portrait 01", src: "/images/portfolio/Models_2/DSC03776.webp", orientation: "portrait" },
+  { id: "mo16", category: "Models", title: "Fashion Portrait 02", src: "/images/portfolio/Models_2/DSC05230.webp", orientation: "portrait" },
+  { id: "mo17", category: "Models", title: "Fashion Portrait 03", src: "/images/portfolio/Models_2/DSC_0078.webp", orientation: "portrait" },
   { id: "mo18", category: "Models", title: "Jewellery Portrait", src: "/images/portfolio/Models_2/jewellery photo.webp", orientation: "portrait" },
-  { id: "mo19", category: "Models", title: "Fashion Portrait 04", src: "/images/portfolio/Models_2/PVL09305.webp", orientation: "landscape" },
-  { id: "mo20", category: "Models", title: "Fashion Portrait 05", src: "/images/portfolio/Models_2/PVL09384.webp", orientation: "landscape" },
+  { id: "mo19", category: "Models", title: "Fashion Portrait 04", src: "/images/portfolio/Models_2/PVL09305.webp", orientation: "portrait" },
+  { id: "mo20", category: "Models", title: "Fashion Portrait 05", src: "/images/portfolio/Models_2/PVL09384.webp", orientation: "portrait" },
   { id: "mo21", category: "Models", title: "Fashion Portrait 06", src: "/images/portfolio/Models_2/PVL09404.webp", orientation: "landscape" },
 
   // Wildlife

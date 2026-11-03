@@ -53,6 +53,7 @@ async function compress() {
     try {
       const srcStat = await stat(filePath);
       await sharp(filePath)
+        .autoOrient()
         .webp({ quality: WEBP_QUALITY, effort: 4 })
         .toFile(webpPath);
 
