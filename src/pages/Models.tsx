@@ -5,7 +5,9 @@ import PlaceholderImage from "../components/PlaceholderImage";
 import CTASection from "../components/CTASection";
 import { portfolioImages } from "../data/portfolio";
 
-const galleryImages = portfolioImages.filter((i) => i.category === "Models");
+const galleryImages = portfolioImages
+  .filter((i) => i.category === "Models")
+  .sort((a, b) => Number(b.id === "mo21") - Number(a.id === "mo21"));
 
 const steps = [
   { num: "01", title: "Creative Direction", desc: "We discuss your vision, ref images, wardrobe and the mood of the editorial you want to create." },

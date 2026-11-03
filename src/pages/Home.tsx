@@ -57,9 +57,10 @@ export default function Home() {
   const categoryPreviews = portfolioCategories
     .filter((category) => category !== "All")
     .map((category) => portfolioImages.filter((image) => image.category === category).slice(0, 3));
-  const preview = [0, 1, 2].flatMap((index) =>
+  const selectedWorks = [0, 1, 2].flatMap((index) =>
     categoryPreviews.flatMap((images) => images[index] ? [images[index]] : [])
   );
+  const preview = [...selectedWorks.slice(-1), ...selectedWorks.slice(0, -1)];
 
   return (
     <div>
@@ -251,6 +252,7 @@ export default function Home() {
                 <Link to="/portfolio">
                   <PlaceholderImage
                     src={img.src}
+                    loading={i === 0 ? "eager" : "lazy"}
                     alt={img.title}
                     label={`${img.category} ${img.title}`}
                     aspect={
