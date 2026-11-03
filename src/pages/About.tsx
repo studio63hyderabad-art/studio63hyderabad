@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import PlaceholderImage from "../components/PlaceholderImage";
 import Timeline from "../components/Timeline";
 
 const philosophyItems = [
@@ -12,6 +11,7 @@ const paragraphs = [
   "Welcome to Studio63#Hyderabad, a premier photography studio and visual academy in Begumpet with over 7 years of professional experience.",
   "Our foundation includes extensive visual storytelling with Deccan Chronicle from 2015 to 2018, mastering professional photography in high-paced media environments.",
   "From 2021 to 2023, our leadership worked with CMOF Global as Lead Photographer and Photography Trainer.",
+  "Sreenu is also a wildlife photographer, capturing the beauty of birds, animals, and their natural habitats.",
   "Alongside commercial and portrait shoots, Studio63#Hyderabad is deeply dedicated to mentoring aspiring photographers to develop their creative confidence.",
 ];
 
@@ -59,12 +59,19 @@ export default function About() {
               className="absolute -top-3 -left-3 w-full h-full pointer-events-none"
               style={{ border: "1px solid var(--color-gold)", opacity: 0.2 }}
             />
-            <div data-cursor="view">
-              <PlaceholderImage
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#080604]" data-cursor="view">
+              {/* The source photo is sideways; rotate its display without changing the original. */}
+              <img
                 src="/images/portfolio/Sreenu/IMG_20261002_163855604_HDR_PORTRAIT.jpg.webp"
-                alt="Sreenu of Studio63 Hyderabad"
-                label="Behind the lens at Studio63"
-                aspect="aspect-[3/4]"
+                alt="Sreenu, wildlife photographer at Studio63 Hyderabad, holding a telephoto camera"
+                loading="eager"
+                decoding="async"
+                className="absolute left-1/2 top-1/2 max-w-none object-contain"
+                style={{
+                  width: "75%",
+                  height: "133.333333%",
+                  transform: "translate(-50%, -50%) rotate(-90deg)",
+                }}
               />
             </div>
           </motion.div>

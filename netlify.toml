@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
+# Revalidate HTML so it references the current deployment's asset chunks.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # Long-term cache for images and static assets
 [[headers]]
   for = "/images/*"

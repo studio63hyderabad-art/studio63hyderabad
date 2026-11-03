@@ -15,8 +15,12 @@ const STORAGE_KEY = "studio63_theme";
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === "dark" || saved === "light") return saved;
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "dark" || saved === "light") return saved;
+      } catch {
+        // Storage may be disabled by the browser; use the default theme.
+      }
       // Default to dark for the cinematic design experience
     }
     return "dark";
@@ -35,7 +39,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       const meta = document.querySelector('meta[name="theme-color"]');
       if (meta) meta.setAttribute("content", "#FAF7F1");
     }
-    localStorage.setItem(STORAGE_KEY, theme);
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch {
+      // Theme switching should still work when storage is unavailable.
+    }
   }, [theme]);
 
   // useCallback: stable references prevent unnecessary consumer re-renders
