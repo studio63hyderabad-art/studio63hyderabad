@@ -1,0 +1,112 @@
+export type PortfolioCategory =
+  | "Wedding"
+  | "Newborn"
+  | "Maternity"
+  | "Models"
+  | "Wildlife";
+
+export type PortfolioImage = {
+  id: string;
+  category: PortfolioCategory;
+  title: string;
+  src: string;
+  orientation: "portrait" | "landscape" | "square";
+  description?: string;
+};
+
+export const portfolioImages: PortfolioImage[] = [
+  // Weddings
+  { id: "w24", category: "Wedding", title: "A Ring of Promise", src: "/images/portfolio/173.webp", orientation: "landscape" },
+  { id: "w7", category: "Wedding", title: "Tender Embrace", src: "/images/portfolio/1Q6A3062.webp", orientation: "landscape" },
+  { id: "w8", category: "Wedding", title: "Garden Arrival", src: "/images/portfolio/1Q6A3180.webp", orientation: "portrait" },
+  { id: "w9", category: "Wedding", title: "Bridal Grace", src: "/images/portfolio/1Q6A3186.webp", orientation: "portrait" },
+  { id: "w10", category: "Wedding", title: "Golden Path", src: "/images/portfolio/1Q6A3220.webp", orientation: "landscape" },
+  { id: "w11", category: "Wedding", title: "Henna Details", src: "/images/portfolio/3.webp", orientation: "landscape" },
+  { id: "w12", category: "Wedding", title: "Rings of Promise", src: "/images/portfolio/14.webp", orientation: "landscape" },
+  { id: "w13", category: "Wedding", title: "Bridal Ornament", src: "/images/portfolio/19.webp", orientation: "landscape" },
+  { id: "w14", category: "Wedding", title: "Garden Stroll", src: "/images/portfolio/BSK_9929.webp", orientation: "portrait" },
+  { id: "w15", category: "Wedding", title: "Joined Hands", src: "/images/portfolio/BSK_9950.webp", orientation: "landscape" },
+  { id: "w16", category: "Wedding", title: "Royal Portrait", src: "/images/portfolio/DSC_0592.webp", orientation: "portrait" },
+  { id: "w17", category: "Wedding", title: "Garden Walk", src: "/images/portfolio/DSC_6129.webp", orientation: "portrait" },
+  { id: "w18", category: "Wedding", title: "Bridal Radiance", src: "/images/portfolio/DSC_6277.webp", orientation: "landscape" },
+  { id: "w19", category: "Wedding", title: "Sacred Vows", src: "/images/portfolio/DSC_7551.webp", orientation: "landscape" },
+  { id: "w20", category: "Wedding", title: "Crimson Portrait", src: "/images/portfolio/DSC_8798.webp", orientation: "landscape" },
+  { id: "w21", category: "Wedding", title: "Midnight Embrace", src: "/images/portfolio/DSC_9236.webp", orientation: "landscape" },
+
+  // Maternity
+  { id: "m1", category: "Maternity", title: "Peacock Feather Grace", src: "/images/portfolio/maternity/1.webp", orientation: "portrait" },
+  { id: "m2", category: "Maternity", title: "Ivory and Gold Elegance", src: "/images/portfolio/maternity/3.webp", orientation: "portrait" },
+  { id: "m3", category: "Maternity", title: "Crimson Gown in Bloom", src: "/images/portfolio/maternity/16.webp", orientation: "landscape" },
+  { id: "m4", category: "Maternity", title: "A Tender Touch in Denim", src: "/images/portfolio/maternity/18 (1).webp", orientation: "portrait" },
+  { id: "m5", category: "Maternity", title: "Boy or Girl?", src: "/images/portfolio/maternity/18.webp", orientation: "landscape" },
+  { id: "m6", category: "Maternity", title: "Together in Crimson", src: "/images/portfolio/maternity/26.webp", orientation: "portrait" },
+  { id: "m7", category: "Maternity", title: "Motherhood in Monochrome", src: "/images/portfolio/maternity/47.webp", orientation: "portrait" },
+  { id: "m8", category: "Maternity", title: "A Gentle Kiss in Blue", src: "/images/portfolio/maternity/49.webp", orientation: "portrait" },
+  { id: "m9", category: "Maternity", title: "Love in Silhouette", src: "/images/portfolio/maternity/50.webp", orientation: "portrait" },
+
+  { id: "m10", category: "Maternity", title: "Emerald Saree Grace", src: "/images/portfolio/maternity/27.webp", orientation: "portrait" },
+  { id: "m11", category: "Maternity", title: "Together in Ivory and Gold", src: "/images/portfolio/maternity/6.webp", orientation: "portrait" },
+  { id: "m12", category: "Maternity", title: "Love Among Peacock Feathers", src: "/images/portfolio/maternity/44.webp", orientation: "landscape" },
+
+  // Newborn
+  { id: "n15", category: "Newborn", title: "Newborn Portrait 01", src: "/images/portfolio/newborn/38.webp", orientation: "portrait" },
+  { id: "n16", category: "Newborn", title: "Newborn Portrait 02", src: "/images/portfolio/newborn/48.webp", orientation: "landscape" },
+  { id: "n17", category: "Newborn", title: "Newborn Portrait 03", src: "/images/portfolio/newborn/53.webp", orientation: "landscape" },
+  { id: "n18", category: "Newborn", title: "Newborn Portrait 04", src: "/images/portfolio/newborn/71.webp", orientation: "landscape" },
+  { id: "n19", category: "Newborn", title: "Newborn Portrait 05", src: "/images/portfolio/newborn/90.webp", orientation: "landscape" },
+  { id: "n20", category: "Newborn", title: "Newborn Portrait 06", src: "/images/portfolio/newborn/98.webp", orientation: "landscape" },
+  { id: "n21", category: "Newborn", title: "Newborn Portrait 07", src: "/images/portfolio/newborn/103.webp", orientation: "landscape" },
+  { id: "n22", category: "Newborn", title: "Newborn Portrait 08", src: "/images/portfolio/newborn/136.webp", orientation: "landscape" },
+  { id: "n5", category: "Newborn", title: "Alpine Adventure", src: "/images/portfolio/baby/3.webp", orientation: "portrait", description: "A tiny explorer nestled in a snowy mountain scene" },
+  { id: "n6", category: "Newborn", title: "Little Doctor Dreams", src: "/images/portfolio/baby/12.webp", orientation: "square", description: "A peaceful newborn styled with a tiny stethoscope" },
+  { id: "n7", category: "Newborn", title: "Peacock Nest", src: "/images/portfolio/baby/35.webp", orientation: "landscape", description: "A sleeping baby wrapped in warm gold and peacock blue" },
+  { id: "n8", category: "Newborn", title: "Blue Feather Prince", src: "/images/portfolio/baby/DSC_2069.webp", orientation: "landscape", description: "A serene newborn portrait with blue feather details" },
+  { id: "n9", category: "Newborn", title: "Peacock Blue Dreams", src: "/images/portfolio/baby/DSC_2084.webp", orientation: "landscape", description: "A softly styled newborn portrait in rich peacock blue" },
+  { id: "n10", category: "Newborn", title: "Tiny Aviator", src: "/images/portfolio/baby/photo 2.webp", orientation: "landscape", description: "A little pilot resting in a charming aviation setup" },
+  { id: "n11", category: "Newborn", title: "Floral Blue Nest", src: "/images/portfolio/baby/photo 22.webp", orientation: "landscape", description: "A newborn sleeping peacefully among blue florals" },
+  { id: "n12", category: "Newborn", title: "Dream Circle", src: "/images/portfolio/baby/photo 49.webp", orientation: "landscape", description: "A floral dreamscape created around a sleeping newborn" },
+  { id: "n13", category: "Newborn", title: "Winter Wonderland", src: "/images/portfolio/baby/photo 125.webp", orientation: "landscape", description: "A magical winter portrait with snowy trees and soft light" },
+  { id: "n14", category: "Newborn", title: "Midnight Window", src: "/images/portfolio/baby/photo 166.webp", orientation: "landscape", description: "A cozy newborn portrait framed by a moonlit window scene" },
+
+  // Models & Fashion
+  { id: "mo13", category: "Models", title: "Curls and Confidence", src: "/images/portfolio/Models/DSC04441.webp", orientation: "portrait", description: "A close-up studio portrait pairs soft curls with black satin and a confident gaze." },
+  { id: "mo14", category: "Models", title: "Golden Glamour", src: "/images/portfolio/Models/DSC04462.webp", orientation: "portrait", description: "A full-length portrait of a shimmering gold gown, finished with a sparkling tiara." },
+  { id: "mo6", category: "Models", title: "Poise in Black", src: "/images/portfolio/Models/DSC04432.webp", orientation: "portrait", description: "Soft curls and a black satin outfit in a quietly confident studio portrait." },
+  { id: "mo7", category: "Models", title: "Crowned in Gold", src: "/images/portfolio/Models/DSC04460.webp", orientation: "portrait", description: "A sparkling gold gown and tiara bring a touch of glamour to the studio." },
+  { id: "mo8", category: "Models", title: "The Statement Suit", src: "/images/portfolio/Models/DSC_4803.webp", orientation: "portrait", description: "A tailored black suit, statement jewellery and pink platform heels create a bold fashion look." },
+  { id: "mo9", category: "Models", title: "Editorial Edge", src: "/images/portfolio/Models/DSC_4810.webp", orientation: "portrait", description: "A poised profile pairs sharp black tailoring with sculptural silver jewellery." },
+
+  { id: "mo15", category: "Models", title: "Fashion Portrait 01", src: "/images/portfolio/Models_2/DSC03776.webp", orientation: "landscape" },
+  { id: "mo16", category: "Models", title: "Fashion Portrait 02", src: "/images/portfolio/Models_2/DSC05230.webp", orientation: "landscape" },
+  { id: "mo17", category: "Models", title: "Fashion Portrait 03", src: "/images/portfolio/Models_2/DSC_0078.webp", orientation: "landscape" },
+  { id: "mo18", category: "Models", title: "Jewellery Portrait", src: "/images/portfolio/Models_2/jewellery photo.webp", orientation: "portrait" },
+  { id: "mo19", category: "Models", title: "Fashion Portrait 04", src: "/images/portfolio/Models_2/PVL09305.webp", orientation: "landscape" },
+  { id: "mo20", category: "Models", title: "Fashion Portrait 05", src: "/images/portfolio/Models_2/PVL09384.webp", orientation: "landscape" },
+  { id: "mo21", category: "Models", title: "Fashion Portrait 06", src: "/images/portfolio/Models_2/PVL09404.webp", orientation: "landscape" },
+
+  // Wildlife
+  { id: "wl1", category: "Wildlife", title: "A Pause in the Undergrowth", src: "/images/portfolio/animals/1.jpg", orientation: "landscape" },
+  { id: "wl2", category: "Wildlife", title: "Stripes on the Move", src: "/images/portfolio/animals/4.webp", orientation: "landscape" },
+  { id: "wl9", category: "Wildlife", title: "The Golden Gaze", src: "/images/portfolio/animals/DSC02759_1.webp", orientation: "landscape" },
+  { id: "wl10", category: "Wildlife", title: "A Song at Sundown", src: "/images/portfolio/animals/wildlife/1.webp", orientation: "landscape" },
+  { id: "wl11", category: "Wildlife", title: "Behind the Bark", src: "/images/portfolio/animals/wildlife/1000318628.webp", orientation: "landscape" },
+  { id: "wl12", category: "Wildlife", title: "Through the Green Kingdom", src: "/images/portfolio/animals/wildlife/3.webp", orientation: "landscape" },
+  { id: "wl13", category: "Wildlife", title: "Silhouette in Amber", src: "/images/portfolio/animals/wildlife/4.webp", orientation: "landscape" },
+  { id: "wl14", category: "Wildlife", title: "At the Water's Edge", src: "/images/portfolio/animals/wildlife/7.webp", orientation: "landscape" },
+  { id: "wl15", category: "Wildlife", title: "Eyes Through the Leaves", src: "/images/portfolio/animals/wildlife/DSC02835_1.webp", orientation: "landscape" },
+  { id: "wl16", category: "Wildlife", title: "A Glance from the Branches", src: "/images/portfolio/animals/wildlife/EDD.webp", orientation: "landscape" },
+  { id: "wl17", category: "Wildlife", title: "Lost in Thought", src: "/images/portfolio/animals/wildlife/mon.webp", orientation: "portrait" },
+  { id: "wl18", category: "Wildlife", title: "Wings in Living Colour", src: "/images/portfolio/animals/wildlife/Wild 11.webp", orientation: "portrait" },
+
+  { id: "wl19", category: "Wildlife", title: "A Quiet Perch", src: "/images/portfolio/animals/wildlife/bidee.webp", orientation: "landscape" },
+];
+
+export const portfolioCategories: (PortfolioCategory | "All")[] = [
+  "All",
+  "Wedding",
+  "Newborn",
+  "Maternity",
+  "Models",
+  "Wildlife",
+
+];

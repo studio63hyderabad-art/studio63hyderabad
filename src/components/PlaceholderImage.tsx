@@ -1,0 +1,114 @@
+import { useEffect, useRef, useState } from "react";
+import { Camera } from "lucide-react";
+
+type Props = {
+  src?: string;
+  alt: string;
+  label?: string;
+  className?: string;
+  aspect?: string;
+  loading?: "lazy" | "eager";
+  /** Responsive sizes hint – defaults to a sensible value for most uses */
+  sizes?: string;
+  objectPosition?: string;
+  objectFit?: "cover" | "contain";
+};
+
+/**
+ * Renders a real photograph when `src` resolves, otherwise falls back to an
+ * elegant placeholder that works in both light and dark modes.
+ * Drop real images into /public/images/... and point src at the path.
+ *
+ * Performance features:
+ * - Eager images use fetchPriority="high" so the browser prioritises them
+ * - Lazy images use native browser lazy-loading (no JS overhead)
+ * - `decoding="async"` keeps the main thread unblocked
+ * - Skeleton shimmer disappears the moment the image paints
+ */
+export default function PlaceholderImage({
+  src,
+  alt,
+  label,
+  className = "",
+  aspect = "aspect-[4/5]",
+  loading = "lazy",
+  sizes = "(max-width: 768px) 100vw, 50vw",
+  objectPosition = "center",
+  objectFit = "cover",
+}: Props) {
+  const [failedSrc, setFailedSrc] = useState<string>();
+  const [loadedSrc, setLoadedSrc] = useState<string>();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [nearViewport, setNearViewport] = useState(false);
+  const shouldLoad = loading === "eager" || nearViewport;
+  const loaded = loadedSrc === src;
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (loading === "eager" || nearViewport || !container) return;
+    if (!("IntersectionObserver" in window)) {
+      setNearViewport(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setNearViewport(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "300px" });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [loading, nearViewport, src]);
+
+  if (failedSrc === src || !src) {
+    return (
+      <div
+        className={`relative overflow-hidden ${aspect} ${className}`}
+        style={{
+          background:
+            "linear-gradient(135deg, #1E1A15 0%, #2A231B 50%, #1A1510 100%)",
+        }}
+        role="img"
+        aria-label={alt}
+      >
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/20">
+          <Camera size={28} strokeWidth={1.25} />
+          {label && (
+            <span className="font-sans text-[10px] tracking-wide text-center px-6 opacity-60 leading-snug">
+              {label}
+            </span>
+          )}
+        </div>
+        {/* Subtle inner border */}
+        <div className="absolute inset-0 border border-white/5" />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={containerRef}
+      className={`relative overflow-hidden w-full h-full ${aspect} ${className}`}
+      aria-busy={!loaded}
+      style={{ contentVisibility: loading === "lazy" ? "auto" : "visible" }}
+    >
+      {!loaded && <div aria-hidden="true" className="skeleton absolute inset-0" />}
+      <img
+        key={src}
+        ref={(image) => {
+          if (image?.complete && image.naturalWidth > 0) setLoadedSrc(src);
+        }}
+        src={shouldLoad ? src : undefined}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        fetchPriority={loading === "eager" ? "high" : "low"}
+        sizes={sizes}
+        style={{ objectPosition, objectFit }}
+        className={`object-cover w-full h-full ${aspect} transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+        onLoad={() => setLoadedSrc(src)}
+        onError={() => setFailedSrc(src)}
+      />
+    </div>
+  );
+}
