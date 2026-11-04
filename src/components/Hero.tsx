@@ -41,7 +41,7 @@ export default function Hero() {
         src="/images/hero/hero-main.webp"
         alt="Cinematic photograph by Studio63#Hyderabad"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-contain md:hidden"
+        className="absolute inset-0 h-full w-full object-fill md:hidden"
       />
       <motion.div
         className="absolute inset-[-10%] top-[-5%] hidden md:block"
