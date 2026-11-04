@@ -33,12 +33,18 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden bg-[#111]"
       style={{ height: "100svh", minHeight: 640 }}
     >
       {/* ── Parallax Background (Image Fallback / Video) ── */}
+      <img
+        src="/images/hero/hero-main.webp"
+        alt="Cinematic photograph by Studio63#Hyderabad"
+        fetchPriority="high"
+        className="absolute inset-0 h-full w-full object-contain md:hidden"
+      />
       <motion.div
-        className="absolute inset-[-10%] top-[-5%]"
+        className="absolute inset-[-10%] top-[-5%] hidden md:block"
         style={{ y: reducedMotion ? 0 : bgY, scale: reducedMotion ? 1 : bgScale, filter: reducedMotion ? "none" : bgBlur }}
       >
         <div data-cursor="view" className="w-full h-full relative bg-[#111]">
