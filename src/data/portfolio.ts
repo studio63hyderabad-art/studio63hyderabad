@@ -85,6 +85,7 @@ export const portfolioImages: PortfolioImage[] = [
   { id: "mo21", category: "Models", title: "Fashion Portrait 06", src: "/images/portfolio/Models_2/PVL09404.webp", orientation: "landscape" },
 
   // Wildlife
+  { id: "wl22", category: "Wildlife", title: "Bird in the Wild", src: "/images/portfolio/animals/wildlife/birr.jpg", orientation: "landscape" },
   { id: "wl20", category: "Wildlife", title: "Wildlife Portrait", src: "/images/portfolio/animals/wildlife/1000318625.jpg.jpeg", orientation: "portrait" },
   { id: "wl21", category: "Wildlife", title: "A Moment in the Wild", src: "/images/portfolio/animals/wildlife/6.jpg.jpeg", orientation: "landscape" },
   { id: "wl9", category: "Wildlife", title: "The Golden Gaze", src: "/images/portfolio/animals/DSC02759_1.webp", orientation: "landscape" },
